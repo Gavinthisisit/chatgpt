@@ -1,4 +1,4 @@
-from dataset import NalanDataset
+from dataset import PoetryDataset
 import pickle
 import os 
 import sys 
@@ -18,7 +18,7 @@ if __name__=='__main__':
         print(ids,text)
         sys.exit(0)
 
-    ds=NalanDataset()
+    ds=PoetryDataset()
     with open(filename,'wb') as fp:
         ds.build_train_data()
         pickle.dump(ds,fp)

@@ -10,7 +10,9 @@ class PoetryDataset(Dataset):
         super().__init__()
         with open('纳兰性德诗集.json','r',encoding='utf-8') as fp:
             self.raw_ds=json.loads(fp.read())
-        print(self.raw_ds[0])
+        for line in open("poetry_data.json", "r", encoding="utf-8").readlines():
+            obj = json.loads(line.strip())
+            self.raw_ds.append(obj)
     
     def build_train_data(self):
         tokenizer=BPETokenizer()
