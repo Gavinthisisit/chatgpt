@@ -5,11 +5,12 @@ import json
 from tqdm import tqdm
 
 # 数据集
-class NalanDataset(Dataset):
+class PoetryDataset(Dataset):
     def __init__(self):
         super().__init__()
         with open('纳兰性德诗集.json','r',encoding='utf-8') as fp:
             self.raw_ds=json.loads(fp.read())
+        print(self.raw_ds[0])
     
     def build_train_data(self):
         tokenizer=BPETokenizer()
@@ -32,3 +33,6 @@ class NalanDataset(Dataset):
     
     def __getitem__(self,index):
         return self.data[index]
+
+if __name__ == "__main__":
+    PoetryDataset = PoetryDataset()

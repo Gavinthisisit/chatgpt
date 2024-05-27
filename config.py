@@ -1,4 +1,4 @@
-VOCAB_SIZE=500    # 词表大小
+VOCAB_SIZE=600    # 词表大小
 MAX_SEQ_LEN=2000     # GPT模型输入限制
 
 # transformer

@@ -11,6 +11,9 @@ if os.path.exists('tokenizer.bin'):
 # 原始数据
 with open('纳兰性德诗集.json','r',encoding='utf-8') as fp:
     ds=json.loads(fp.read())
+for line in open("poetry_data.json", "r", encoding="utf-8").readlines():
+    obj = json.loads(line.strip())
+    ds.append(obj)
 
 text_list=[]
 sample_count=0
